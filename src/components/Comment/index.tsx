@@ -3,7 +3,12 @@ import { Avatar } from '../Avatar';
 import { ThumbsUp, Trash } from 'phosphor-react';
 import styles from './Commnet.module.css';
 
-export function Comment({ content, onDeleteComment }) {
+interface CommentProps {
+  content: string;
+  onDeleteComment: (comment: string) => void
+}
+
+export function Comment({ content, onDeleteComment }: CommentProps) {
   const [likeComment, setLikeComment] = useState(0);
 
   function handleDeleteComment() {
@@ -23,7 +28,7 @@ export function Comment({ content, onDeleteComment }) {
           <header>
             <div className={styles.authorAndTime}>
               <strong>Thiago Sousa</strong>
-              <time title="11 de Maio às 08:13h" datatime="2022-05-11 08:13:30">
+              <time title="11 de Maio às 08:13h" dateTime="2022-05-11 08:13:30">
                 Cerca de 1h atrás
               </time>
             </div>
